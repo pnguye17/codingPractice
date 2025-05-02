@@ -6,12 +6,12 @@ public class romanToInt {
 
     public static void main(String[] args) {
 
-        changeRomanToInt("III");
+        changeRomanToInt("XXXVIII");
 
     }
 
-    private static void changeRomanToInt(String s) {
-        int sum = 0;
+    static void changeRomanToInt(String s) {
+        int sum = 0; 
 
         HashMap<String, Integer> numerals = new HashMap<>();
         numerals.put("I", 1);
@@ -32,17 +32,15 @@ public class romanToInt {
 
         String[] strings = s.split("");
 
-        // for (String str : strings){
-        //     System.out.println(str);
-        // }
-
-        for (int t = 0; t <  s.length() - 1; t++ ){
-            if (strings[t] == "I") {
-                sum = sum + numerals.get(strings[t]);
-                System.out.print(sum);
-            }
+        for (int t = 0; t <  strings.length; t++ ){
+          if (numerals.containsKey(strings[t])){
+            sum = sum + numerals.get(strings[t]);
+          }
         } 
+        System.out.println(sum);
 
-        
+
+        //must check for IV vs VI
+
     }
 }
