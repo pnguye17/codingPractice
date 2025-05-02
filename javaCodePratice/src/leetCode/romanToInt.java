@@ -6,41 +6,35 @@ public class romanToInt {
 
     public static void main(String[] args) {
 
-        changeRomanToInt("XXXVIII");
+        changeRomanToInt("XXIX");
 
     }
 
     static void changeRomanToInt(String s) {
-        int sum = 0; 
 
-        HashMap<String, Integer> numerals = new HashMap<>();
-        numerals.put("I", 1);
-        numerals.put("V", 5);
-        numerals.put("X", 10);
-        numerals.put("L", 50);
-        numerals.put("C", 100);
-        numerals.put("D", 500);
-        numerals.put("M", 1000);
-        numerals.put("IV", 4);
-        numerals.put("IX", 9);
-        numerals.put("XL", 40);
-        numerals.put("XC", 90);
-        numerals.put("CD", 400);
-        numerals.put("CM", 900);
+        HashMap<Character, Integer> roman = new HashMap<>();
+        roman.put('I', 1);
+        roman.put('V', 5);
+        roman.put('X', 10);
+        roman.put('L', 50);
+        roman.put('C', 100);
+        roman.put('D', 500);
+        roman.put('M', 1000);
 
-        //split given string into array of chars
+        int result = 0;
+        int prevValue = 0;
 
-        String[] strings = s.split("");
+        for (int i = s.length() - 1; i >= 0; i--) {
+            int currentValue = roman.get(s.charAt(i));
 
-        for (int t = 0; t <  strings.length; t++ ){
-          if (numerals.containsKey(strings[t])){
-            sum = sum + numerals.get(strings[t]);
-          }
-        } 
-        System.out.println(sum);
-
-
-        //must check for IV vs VI
+            if (currentValue < prevValue) {
+                result -= currentValue;
+            } else {
+                result += currentValue;
+            }
+            prevValue = currentValue;
+        }
+         System.out.println(result);
 
     }
 }
