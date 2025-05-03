@@ -28,3 +28,12 @@ var mySqrt = function(x) {
 
 
 
+/**
+ * @param {string[]} strs
+ * @return {string}
+ */
+
+var longestCommonPrefix = function(strs) {
+    //compare each string value and iterate the first letters
+    
+};
