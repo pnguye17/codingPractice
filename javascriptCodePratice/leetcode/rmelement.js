@@ -4,18 +4,20 @@
  * @return {number}
  */
 var removeElement = function(nums, val) {
-    //convert nums to nums array
-    //loop two the array and remove number
-
+ 
     for(let i = 0; i < nums.length; i++){
-        if (nums[i] === val){
-            nums.removeElement(val);
+        if ( nums[i] === val){
+            delete nums[i]; 
         }
     }
 
-    console.log(nums);
+    let array = nums.filter(function(e) {
+                
+        return e
+    })
 
+    return array;
 
-};
+}
 
 
