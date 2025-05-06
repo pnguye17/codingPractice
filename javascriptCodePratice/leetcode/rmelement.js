@@ -34,20 +34,12 @@ var mySqrt = function(x) {
  */
 
 var longestCommonPrefix = function(strs) {
-    //split each string in the array in substrings to iterate
-    let prefixContainer = []
-    let prefix = ""
-    for (let i = 0; i < strs.length; i++){
-        for (let j = 1; j < strs.length; j++){
-            let initialWord = strs[i].split('').shift()
-            let compareWord = strs[j].split('').shift()
-            if (initialWord === compareWord){
-                prefixContainer.push(initialWord)
-                initialWord = ''
-                compareWord = ''
-            }
-        }
+  if (!strs.length) return ''
+
+  for (let i = 0 ; i <= strs[0].length; i++){
+    if(!strs.every((string) => string[i] === strs[0][i])){
+        return strs[0].slice(0,1)
     }
-    prefix = prefixContainer.join('')
-    console.log(prefix)
+  }
+    return strs[0]
 };
