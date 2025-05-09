@@ -13,18 +13,19 @@ public class parenthesis {
         // split the string into array of string and iterate each char for the above
 
 
-        char openBracket = '[';
-        String closeBracket = "]";
-        char openCurly = '{';
-        char closeCurly = '}';
-        char openParenthesis = '(';
-        char closeParentesis = ')';
+        // char openBracket = '[';
+        // String closeBracket = "]";
+        // char openCurly = '{';
+        // char closeCurly = '}';
+        // char openParenthesis = '(';
+        // char closeParentesis = ')';
     
         //loop the first char
 
         for (int i = 0 ; i <= string.length(); i++){
             if (String.valueOf(i+1).equals(closeBracket)){
-                return true;
+                
+            return true;
             }
         }
 
